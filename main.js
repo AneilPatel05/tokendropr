@@ -10,7 +10,7 @@ const options = {
   }
 
 const ss = new Streamer(options);
-const from = 'smartdrop';
+const botname = 'smartdrop';
 var recievers=[];
 // Kickstart the streamer to watch the Steem blockchain
 ss.start();
@@ -72,20 +72,51 @@ ss.onSscJson((contractName, contractAction, contractPayload, sender, op, blockNu
 
 function airdropVoters(url,amount,symbol){
     console.log('voter airdrop called.')
+    let voters=[];
+    let memo="Airdrop"
+    ss.transferSteemEngineTokensMultiple(botname,voters,symbol,memo)
+    .then(data =>{
+        console.log(data)
+    })
 }
 
 function airdropResteems(url,amount,symbol){
-
+    console.log('voter airdrop called.')
+    let resteems=[];
+    let memo="Airdrop"
+    ss.transferSteemEngineTokensMultiple(botname,resteems,symbol,memo)
+    .then(data =>{
+        console.log(data)
+    })
 }
 
 function airdropfollowers(account,amount,symbol){
-
+    console.log('voter airdrop called.')
+    let followers=[];
+    let memo="Airdrop"
+    ss.transferSteemEngineTokensMultiple(botname,followers,symbol,memo)
+    .then(data =>{
+        console.log(data)
+    })
 }
 
 function airdropStakers(stakeSymbol,amount,symbol){
     console.log('staker airdrop called. for '+amount + symbol)
+    console.log('voter airdrop called.')
+    let stakers=[];
+    let memo="Airdrop"
+    ss.transferSteemEngineTokensMultiple(botname,stakers,symbol,memo)
+    .then(data =>{
+        console.log(data)
+    })
 }
 
 function airdropDelegators(delegationSymbol,amount,symbol){
-
+    console.log('voter airdrop called.')
+    let delegators=[];
+    let memo="Airdrop"
+    ss.transferSteemEngineTokensMultiple(botname,delegators,symbol,memo)
+    .then(data =>{
+        console.log(data)
+    })
 }
